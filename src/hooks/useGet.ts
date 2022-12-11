@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export const useGet = (url: string) => {
+export const useGet = <T>(url: string) => {
   interface IStatus {
     loading: boolean;
     error: null | any;
-    data: null | []
+    data: null | T[]
   }
 
   const [status, setStatus] = useState<IStatus>({
@@ -20,7 +20,7 @@ export const useGet = (url: string) => {
   
   const getData = async () => {
     try {
-      const res = await axios(url);    
+      const res = await axios(url);
       setStatus({
         loading: false,
         error: null,

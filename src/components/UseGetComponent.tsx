@@ -13,8 +13,8 @@ const UseGetComponent = () => {
     title: string;
   }
 
-  const [dataUsers, loadingUsers, errorUsers] = useGet('https://jsonplaceholder.typicode.com/users')
-  const [dataPosts, loadingPosts, errorPosts] = useGet('https://jsonplaceholder.typicode.com/posts')
+  const [dataUsers, loadingUsers, errorUsers] = useGet<IUser>('https://jsonplaceholder.typicode.com/users')
+  const [dataPosts, loadingPosts, errorPosts] = useGet<IPost>('https://jsonplaceholder.typicode.com/posts')
   return (
     <>
       <h1>Custom hooks</h1>
